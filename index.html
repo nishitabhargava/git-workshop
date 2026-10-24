@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nishita Bhargava | Portfolio</title>
+
+    <title>Nishita | Developer Portfolio</title>
 
     <style>
         * {
@@ -15,196 +16,231 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #07111f;
+            background: #080b16;
             color: white;
-            line-height: 1.6;
+            font-family: 'Segoe UI', sans-serif;
         }
 
-        header {
-            background: #0b192b;
-            padding: 20px 8%;
+        /* Navbar */
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #183453;
+            padding: 22px 8%;
+            background: #0c1020;
+            border-bottom: 1px solid #202945;
+            position: sticky;
+            top: 0;
         }
 
-        header h2 {
-            color: #28a4ff;
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #00e5ff;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 22px;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #28a4ff;
+            color: #00e5ff;
         }
 
+        /* Hero Section */
         .hero {
-            min-height: 80vh;
-            padding: 100px 8%;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 70px 8%;
             gap: 40px;
         }
 
+        .hero h4 {
+            color: #00e5ff;
+            letter-spacing: 3px;
+        }
+
         .hero h1 {
-            font-size: 48px;
+            font-size: 55px;
             margin: 15px 0;
         }
 
         .hero h1 span {
-            color: #28a4ff;
+            color: #00e5ff;
         }
 
         .hero p {
-            color: #b8c8dc;
-            margin-bottom: 20px;
-        }
-
-        .hero h3 {
-            color: #a9cfff;
-        }
-
-        .code-box {
-            background: #0e2036;
-            padding: 30px;
-            border: 1px solid #28a4ff;
-            border-radius: 15px;
-            color: #65c4ff;
-            font-family: monospace;
-            box-shadow: 0 0 25px #102d50;
+            color: #b7bfd5;
+            font-size: 17px;
+            margin-bottom: 25px;
+            max-width: 500px;
         }
 
         .btn {
             display: inline-block;
-            background: #28a4ff;
-            color: #07111f;
-            padding: 12px 22px;
-            border-radius: 8px;
+            padding: 13px 25px;
+            background: #00e5ff;
+            color: #080b16;
             text-decoration: none;
+            border-radius: 8px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
-        section {
-            padding: 65px 8%;
-            border-top: 1px solid #183453;
+        .btn:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px #00e5ff;
         }
 
-        section h2 {
-            color: #28a4ff;
-            font-size: 30px;
-            margin-bottom: 25px;
+        /* Code Box */
+        .code-box {
+            background: #10172a;
+            padding: 30px;
+            border: 1px solid #00e5ff;
+            border-radius: 15px;
+            box-shadow: 0 0 30px #00e5ff20;
+            font-family: monospace;
+            font-size: 16px;
+            line-height: 2;
+            min-width: 300px;
+        }
+
+        .code-box span {
+            color: #00e5ff;
+        }
+
+        /* Common Sections */
+        section:not(.hero) {
+            padding: 70px 8%;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        .heading span {
+            color: #00e5ff;
+        }
+
+        /* About */
+        .about {
+            text-align: center;
+            background: #0c1020;
         }
 
         .about p {
             max-width: 750px;
-            color: #b8c8dc;
+            margin: auto;
+            color: #b7bfd5;
+            line-height: 1.9;
         }
 
+        /* Skills */
         .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .skills span {
-            background: #10243b;
-            border: 1px solid #20466b;
-            padding: 12px 20px;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .skills span:hover {
-            background: #28a4ff;
-            color: #07111f;
-            transform: translateY(-4px);
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            justify-content: center;
             gap: 20px;
         }
 
-        .card {
-            background: #0b192b;
+        .skill {
+            padding: 20px 30px;
+            background: #10172a;
+            border: 1px solid #202945;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            border-color: #00e5ff;
+            color: #00e5ff;
+            transform: translateY(-5px);
+        }
+
+        /* Projects */
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project {
             padding: 25px;
-            border: 1px solid #183453;
+            background: #10172a;
+            border: 1px solid #202945;
             border-radius: 12px;
             transition: 0.3s;
         }
 
-        .card:hover {
-            transform: translateY(-6px);
-            border-color: #28a4ff;
-            box-shadow: 0 8px 25px #061a30;
+        .project:hover {
+            transform: translateY(-7px);
+            border-color: #00e5ff;
+            box-shadow: 0 0 20px #00e5ff15;
         }
 
-        .card h3 {
-            color: #65c4ff;
-            margin-bottom: 12px;
+        .project h3 {
+            color: #00e5ff;
+            margin-bottom: 15px;
         }
 
-        .card p {
-            color: #b8c8dc;
+        .project p {
+            color: #b7bfd5;
+            line-height: 1.7;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+            background: #0c1020;
         }
 
         .contact p {
-            margin-bottom: 12px;
-        }
-
-        .contact a {
-            color: #28a4ff;
-            text-decoration: none;
+            color: #b7bfd5;
+            margin-bottom: 25px;
         }
 
         footer {
             text-align: center;
-            padding: 25px;
-            background: #0b192b;
-            color: #b8c8dc;
+            padding: 22px;
+            color: #9da9c4;
+            border-top: 1px solid #202945;
         }
 
+        /* Responsive Design */
         @media (max-width: 800px) {
-            header {
+            nav {
                 flex-direction: column;
                 gap: 15px;
             }
 
-            nav {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 12px;
-            }
-
             nav a {
-                margin: 0;
+                margin: 0 7px;
             }
 
             .hero {
                 flex-direction: column;
                 align-items: flex-start;
-                padding-top: 65px;
             }
 
             .hero h1 {
-                font-size: 38px;
+                font-size: 40px;
             }
 
             .code-box {
                 width: 100%;
+                min-width: 0;
                 overflow-wrap: anywhere;
             }
 
-            .projects {
+            .project-container {
                 grid-template-columns: 1fr;
             }
         }
@@ -213,33 +249,140 @@
 
 <body>
 
-    <!-- Navigation -->
-    <header>
-        <h2>&lt;/&gt; Nishita</h2>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">&lt;/&gt; Nishita</div>
 
-        <nav>
+        <div>
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <!-- Home -->
     <section class="hero" id="home">
+
         <div>
-            <h3>Hello, World! I'm</h3>
-            <h1>Nishita <span>Bhargava</span></h1>
-            <p>MCA Student | Aspiring Web Developer</p>
+            <h4>HELLO, WORLD! 👋</h4>
+
+            <h1>I'm Nishita <span>Bhargava</span></h1>
 
             <p>
-                I love building creative websites and turning ideas
-                into useful digital experiences.
+                MCA Student | Web Developer | Tech Enthusiast
+                <br><br>
+                I love creating beautiful websites, exploring
+                new technologies and turning creative ideas
+                into digital experiences.
             </p>
 
-            <a href="#projects" class="btn">Explore My Projects</a>
+            <a href="#projects" class="btn">Explore My Work ↗</a>
         </div>
 
-        <div class="code
+        <div class="code-box">
+            <p><span>const</span> developer = {</p>
+            <p>&nbsp;&nbsp;name: "Nishita",</p>
+            <p>&nbsp;&nbsp;skills: ["HTML", "CSS", "JS"],</p>
+            <p>&nbsp;&nbsp;passion: "Coding",</p>
+            <p>&nbsp;&nbsp;dream: "Full Stack Developer"</p>
+            <p>};</p>
+            <p><span>// Keep learning 🚀</span></p>
+        </div>
+
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <h2 class="heading">About <span>Me</span></h2>
+
+        <p>
+            Hey! I'm Nishita, a BCA graduate currently pursuing MCA.
+            I'm passionate about web development, programming,
+            creative design and problem solving. I enjoy learning
+            new technologies and building projects that combine
+            creativity with technology.
+        </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2 class="heading">My <span>Skills</span></h2>
+
+        <div class="skills">
+            <div class="skill">HTML5</div>
+            <div class="skill">CSS3</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Python</div>
+            <div class="skill">C Programming</div>
+            <div class="skill">SQL</div>
+            <div class="skill">MySQL</div>
+            <div class="skill">Git & GitHub</div>
+            <div class="skill">Figma</div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2 class="heading">My <span>Projects</span></h2>
+
+        <div class="project-container">
+
+            <div class="project">
+                <h3>01. Library Management</h3>
+                <p>
+                    A Python and SQL based application
+                    to manage library books and records.
+                </p>
+            </div>
+
+            <div class="project">
+                <h3>02. StreamHub UI</h3>
+                <p>
+                    A modern streaming platform interface
+                    with an attractive user experience.
+                </p>
+            </div>
+
+            <div class="project">
+                <h3>03. Sudoku Game</h3>
+                <p>
+                    An interactive puzzle game designed
+                    to practise programming logic.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2 class="heading">Let's <span>Connect</span></h2>
+
+        <p>
+            Have an idea or want to collaborate on a project?
+            Let's connect!
+        </p>
+
+        <a href="mailto:your.email@example.com" class="btn">
+            Contact Me ✉
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            © <span id="year"></span> Nishita Bhargava |
+            Designed with ❤️ and Code
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
 ```
